@@ -4,7 +4,7 @@ package gps;
 
 message GGA {
   uint64 _inner_timestamp = 1;
-  string time = 2;
+  bytes time = 2;
   double latitude = 3;
   string north_south = 4;
   double longitude = 5;
