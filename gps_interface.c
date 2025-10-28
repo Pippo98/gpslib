@@ -96,6 +96,7 @@ int gps_interface_open_log_file(gps_serial_port *new_serial_port,
   if (new_serial_port->fd == -1) return -1;  // Error
 
   new_serial_port->port = (char *)malloc(strlen(filename) + 1);
+	memset(new_serial_port->port, 0, strlen(filename) + 1);
   strncpy(new_serial_port->port, filename, strlen(filename));
   new_serial_port->open = 1;
   new_serial_port->read_offset = 0;
@@ -118,6 +119,7 @@ int gps_interface_open_serial_port(gps_serial_port *new_serial_port,
     return -1;
   }
   new_serial_port->port = (char *)malloc(strlen(port) + 1);
+	memset(new_serial_port->port, 0, strlen(port) + 1);
   strcpy(new_serial_port->port, port);
 
   struct termios tty;
@@ -192,6 +194,7 @@ int gps_interface_open_udp(gps_serial_port *port, const char *udp_port) {
   }
 
   port->port = (char *)malloc(strlen(udp_port) + 1);
+	memset(port->port, 0, strlen(udp_port) + 1);
   strcpy(port->port, udp_port);
 
   struct sockaddr_in addr;
