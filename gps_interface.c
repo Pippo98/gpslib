@@ -191,7 +191,7 @@ int gps_interface_open_udp(gps_serial_port *port, const char *udp_port) {
     return -1;
   }
 
-  port->port = (char *)malloc(strlen(udp_port));
+  port->port = (char *)malloc(strlen(udp_port) * sizeof(char));
   strcpy(port->port, udp_port);
 
   struct sockaddr_in addr;
