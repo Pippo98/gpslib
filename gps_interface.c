@@ -254,7 +254,7 @@ gps_protocol_type gps_interface_get_line(
     port->timestamp = get_real_timestamp();
   }
 
-  while (size < GPS_MAX_LINE_SIZE) {
+  while (size < GPS_MAX_LINE_SIZE - 1) {
     if (gps_interface_read(port, &c, 1) <= 0) return GPS_PROTOCOL_TYPE_SIZE;
 
     // if no match
