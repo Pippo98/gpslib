@@ -182,7 +182,7 @@ typedef struct gps_nmea_gsa_t {
   FIELD(8, int32_t, double, "%f", 1e-2, 0, "m/s", velE)      \
   FIELD(12, int32_t, double, "%f", 1e-2, 0, "m/s", velD)     \
   FIELD(16, uint32_t, double, "%f", 1e-2, 0, "m/s", speed)   \
-  FIELD(20, uint32_t, double, "%f", 1e-5, 0, "deg", gSpeed)  \
+  FIELD(20, uint32_t, double, "%f", 1e-2, 0, "m/s", gSpeed)  \
   FIELD(24, int32_t, double, "%f", 1e-5, 0, "deg", heading)  \
   FIELD(28, uint32_t, double, "%f", 1e-2, 0, "m/s", sAcc)    \
   FIELD(32, uint32_t, double, "%f", 1e-5, 0, "deg", cAcc)
