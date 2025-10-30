@@ -726,11 +726,13 @@ void gps_close_files(gps_files_t *files) {
   for (int i = 0; i < GPS_NMEA_TYPE_SIZE; i++) {
     if (files->nmea[i] != NULL) {
       fclose(files->nmea[i]);
+			files->nmea[i] = NULL;
     }
   }
   for (int i = 0; i < GPS_UBX_TYPE_SIZE; i++) {
     if (files->ubx[i] != NULL) {
       fclose(files->ubx[i]);
+			files->ubx[i] = NULL;
     }
   }
 }
