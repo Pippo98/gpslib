@@ -502,7 +502,7 @@ void gps_ubx_value_to_file_dop(FILE *out, gps_ubx_dop_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_DOP_FIELDS
+              GPS_UBX_DOP_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -521,7 +521,7 @@ void gps_ubx_value_to_file_pvt(FILE *out, gps_ubx_pvt_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_PVT_FIELDS
+              GPS_UBX_PVT_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -540,7 +540,7 @@ void gps_ubx_value_to_file_hpposecef(FILE *out, gps_ubx_hpposecef_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_HPPOSECEF_FIELDS
+              GPS_UBX_HPPOSECEF_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -559,7 +559,7 @@ void gps_ubx_value_to_file_hpposllh(FILE *out, gps_ubx_hpposllh_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_HPPOSLLH_FIELDS
+              GPS_UBX_HPPOSLLH_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -578,7 +578,7 @@ void gps_ubx_value_to_file_relposned(FILE *out, gps_ubx_relposned_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_RELPOSNED_FIELDS
+              GPS_UBX_RELPOSNED_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -597,7 +597,7 @@ void gps_ubx_value_to_file_velned(FILE *out, gps_ubx_velned_t *data) {
 #define FIELD(byte_offset, original_type, struct_type, formatter, scale,       \
               offset, unit, name)                                              \
   "," formatter
-          GPS_UBX_VELNED_FIELDS
+              GPS_UBX_VELNED_FIELDS
 #undef FIELD
           "\n",
           data->_timestamp
@@ -726,13 +726,13 @@ void gps_close_files(gps_files_t *files) {
   for (int i = 0; i < GPS_NMEA_TYPE_SIZE; i++) {
     if (files->nmea[i] != NULL) {
       fclose(files->nmea[i]);
-			files->nmea[i] = NULL;
+      files->nmea[i] = NULL;
     }
   }
   for (int i = 0; i < GPS_UBX_TYPE_SIZE; i++) {
     if (files->ubx[i] != NULL) {
       fclose(files->ubx[i]);
-			files->ubx[i] = NULL;
+      files->ubx[i] = NULL;
     }
   }
 }
